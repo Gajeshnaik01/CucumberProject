@@ -57,5 +57,26 @@ public class AmazonStepDefination {
 		}
 		
 	}
+	
+	
+	
+	/*
+	 * 
+	 * 
+	 */
+	@When("search for {string}")
+	public void search_for(String string) throws InterruptedException {
+		driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys(string);
+		driver.findElement(By.xpath("//input[@id='nav-search-submit-button']")).click();
+		Thread.sleep(2000);
+		
+	   
+	}
+	@Then("click on any mobile")
+	public void click_on_any_mobile() {
+	    System.out.println("validated");
+	}
+
+	
 
 }
