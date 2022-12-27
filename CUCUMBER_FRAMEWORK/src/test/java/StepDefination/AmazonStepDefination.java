@@ -13,17 +13,17 @@ import io.cucumber.java.en.*;
 public class AmazonStepDefination {
 	WebDriver driver;
 	HomePage homePage;
-	public AmazonStepDefination(Hooks hooks) {
-		this.driver = hooks.getDriver();
-	}
 	WebDriverUtility driverUtility;
 	ConfigReader config;
+	public AmazonStepDefination(Hooks hooks) {
+		this.driver = hooks.getDriver();
+		this.driverUtility=hooks.getDriverUtility();
+		this.config=hooks.getConfigReader();
+	}
+	
 
 	@Given("User must be in Amazon Page")
 	public void user_must_be_in_amazon_page() throws IOException {
-		driverUtility=new WebDriverUtility(driver);
-		config=new ConfigReader();
-		config.intializeConfigReader();
 		String url=config.getProperty("url");
 		driverUtility.openURL(url);
 	}
