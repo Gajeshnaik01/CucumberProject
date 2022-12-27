@@ -11,7 +11,7 @@ public class ProductListPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//span[.='Apple iPhone 14 Plus 256GB Purple']")
+	@FindBy(xpath = "//span[.='Apple iPhone 14 128GB Midnight']")
 	private WebElement clickOnProd;
 
 	public void clickOnProduct() {
