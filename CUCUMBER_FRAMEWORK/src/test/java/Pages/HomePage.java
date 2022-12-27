@@ -20,8 +20,9 @@ public class HomePage {
 	@FindBy(xpath = "//input[@id='nav-search-submit-button']")
 	private WebElement searchBtn;
 
-	public void searchProduct(String productName) {
+	public HomePage searchProduct(String productName) {
 		searchTxtBox.sendKeys(productName);
+		return this;
 	}
 
 	public ProductListPage clickSearchBtn() {
