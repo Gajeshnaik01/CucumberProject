@@ -33,7 +33,7 @@ public class WebDriverUtility {
 		case "chrome":
 			driver = new ChromeDriver();
 			break;
-		case "firfox":
+		case "firefox":
 			driver = new FirefoxDriver();
 			break;
 		case "edge":

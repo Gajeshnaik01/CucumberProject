@@ -1,5 +1,7 @@
 package StepDefination;
 
+import static org.junit.Assert.fail;
+
 import java.io.IOException;
 import java.util.Set;
 
@@ -8,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import Pages.HomePage;
 import UtilityMethods.ConfigReader;
 import UtilityMethods.WebDriverUtility;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 
 public class AmazonStepDefination {
@@ -56,6 +59,7 @@ public class AmazonStepDefination {
 			System.out.println("Test case passed");
 		} else {
 			System.out.println("Test case Failed");
+			fail("Test case Failed");
 		}
 
 	}
@@ -78,4 +82,15 @@ public class AmazonStepDefination {
 		System.out.println("validated");
 	}
 
+	@When("search for mobiles")
+	public void search_for_mobiles(DataTable dataTable) throws InterruptedException {
+		homePage = new HomePage(driver);
+		homePage.searchProduct(dataTable.cell(1, 0)).clickSearchBtn();
+
+		Thread.sleep(2000);
+
+	}
+	
+	
+	
 }
