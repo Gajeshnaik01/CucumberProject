@@ -43,7 +43,7 @@ public class Hooks {
 			//Embed into Report
 			scenario.attach(shot, "image/png", scenario.getName());
 		}
-		driver.quit();
+		//driver.quit();
 		System.out.println("Browser Closed");
 
 	}

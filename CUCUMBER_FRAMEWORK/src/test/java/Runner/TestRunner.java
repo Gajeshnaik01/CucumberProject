@@ -11,8 +11,8 @@ import io.cucumber.junit.CucumberOptions;
 		glue= {"StepDefination","Hooks.java"},
 		monochrome=true,
 		dryRun=false,
-		tags= "@smoke or @tc001",
-		plugin= {"pretty","json:target/json-report/cucumber.json"}
+		tags= "@idfc",
+		plugin= {"pretty","json:target/json-report/cucumber.json", "html:target/html-report/cucumber.html"}
 		)
 
 

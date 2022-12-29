@@ -4,9 +4,12 @@ import java.time.Duration;
 import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class WebDriverUtility {
 	WebDriver driver;
@@ -31,6 +34,7 @@ public class WebDriverUtility {
 
 		switch (browser) {
 		case "chrome":
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			break;
 		case "firefox":
@@ -57,4 +61,24 @@ public class WebDriverUtility {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(sec));
 	}
 
+	
+	public String getCurrentUrl() {
+		return driver.getCurrentUrl();
+		
+	}
+	
+	public void closeDriver() {
+		 driver.close();
+	}
+	
+	
+	
+	public void switchToDefault() {
+		driver.switchTo().defaultContent();
+	}
+	
+	
+	public void switchToFrame(WebElement element) {
+		driver.switchTo().frame(element);
+	}
 }
