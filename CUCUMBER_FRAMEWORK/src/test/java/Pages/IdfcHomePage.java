@@ -64,8 +64,8 @@ public class IdfcHomePage {
 	
 	
 	public void clickOnAccont(String accNo) {
-		String acc=accNo+"";
-		convertXpathToString(xpath, acc).click();
+		
+		convertXpathToString(xpath, accNo).click();
 	}
 	
 	

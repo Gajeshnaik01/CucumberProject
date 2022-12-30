@@ -24,10 +24,9 @@ public class IdfcStepDef {
 		String curUrl=config.getProperty("currenturlidfc");
 		String actUrl=driverUtility.getCurrentUrl();
 		if(curUrl.equals(actUrl)) {
-			System.out.println("User must be in IDFC Home Page");
 		}
 		else {
-			fail("User must be not in IDFC Home Page");
+			fail("User is not in IDFC Home Page");
 		}
 	}
 	@When("User open the Account list and click ok")
